@@ -11,7 +11,7 @@ namespace ChessConsole.ChessGameLayer
         {
         }
 
-        public ChessPosition(int line, char column)
+        public ChessPosition(char column, int line)
         {
             Line = line;
             Column = column;

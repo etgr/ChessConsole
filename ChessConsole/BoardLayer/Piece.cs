@@ -18,5 +18,10 @@ namespace ChessConsole.BoardLayer
             Color = color;
             Board = board;
         }
+
+        public void IncreaseMovementCounter()
+        {
+            MovementCounter++;
+        }
     }
 }

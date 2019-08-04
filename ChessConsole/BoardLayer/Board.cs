@@ -39,13 +39,25 @@ namespace ChessConsole.BoardLayer
             piece.Position = position;
         }
 
+        public Piece RemovePiece(Position position)
+        {
+            if (!HasPieceOnPosition(position))
+            {
+                return null;
+            }
+            Piece removedPiece = GetPiece(position);
+            removedPiece.Position = null;
+            _pieces[position.Line, position.Column] = null;
+            return removedPiece;
+        }
+
         public bool HasPieceOnPosition(Position position)
         {
             ValidatePosition(position);
             return GetPiece(position) != null;
         }
 
-        public bool IsPositionValid(Position position)
+        public bool IsValidPosition(Position position)
         {
             if (position.Line < 0 || position.Column < 0 || position.Line >= LineNumber || position.Column == ColumnNumber)
             {
@@ -56,7 +68,7 @@ namespace ChessConsole.BoardLayer
 
         public void ValidatePosition(Position position)
         {
-            if (!IsPositionValid(position))
+            if (!IsValidPosition(position))
             {
                 throw new BoardException("Invalid position");
             }
