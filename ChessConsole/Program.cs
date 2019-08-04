@@ -14,6 +14,9 @@ namespace ChessConsole
             Console.WriteLine(p1);
             Console.WriteLine(pc1.Color);
             Console.WriteLine(pc1.Position);
+            Console.ReadLine();
+            Console.Clear();
+            ScreenOperation.PrintBoard(b1);
         }
     }
 }
