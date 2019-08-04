@@ -20,5 +20,10 @@ namespace ChessConsole.BoardLayer
             Color = color;
             Board = board;
         }
+
+        public override string ToString()
+        {
+            return "T";
+        }
     }
 }

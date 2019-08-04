@@ -13,9 +13,9 @@ namespace ChessConsole
             {
                 for (int j = 0; j < board.ColumnNumber; j++)
                 {
-                    if (board.Pieces[i, j] != null)
+                    if (board.GetPiece(i, j) != null)
                     {
-                        Console.Write(board.Pieces[i,j] + " ");
+                        Console.Write(board.GetPiece(i,j) + " ");
                     }
                     else
                     {

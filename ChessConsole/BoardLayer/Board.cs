@@ -2,9 +2,9 @@
 {
     class Board
     {
+        private Piece[,] _pieces;
         public int LineNumber { get; set; }
         public int ColumnNumber { get; set; }
-        public Piece[,] Pieces { get; set; }
 
         public Board()
         {
@@ -14,7 +14,18 @@
         {
             LineNumber = lineNumber;
             ColumnNumber = columnNumber;
-            Pieces = new Piece[LineNumber, ColumnNumber];
+            _pieces = new Piece[LineNumber, ColumnNumber];
+        }
+
+        public Piece GetPiece (int line, int column)
+        {
+            return _pieces[line, column];
+        }
+
+        public void AddPiece (Piece piece, Position position)
+        {
+            _pieces[position.Line, position.Column] = piece;
+            piece.Position = position;
         }
     }
 }
