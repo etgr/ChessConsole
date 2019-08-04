@@ -18,9 +18,13 @@ namespace ChessConsole
                 b.AddPiece(new Tower(Color.White, b), new Position(0, 0));
                 b.AddPiece(new Tower(Color.White, b), new Position(5, 7));
                 b.AddPiece(new King(Color.Black, b), new Position(1, 2));
-                b.AddPiece(new King(Color.Black, b), new Position(1, 8));
 
                 ScreenOperation.PrintBoard(b);
+
+                Console.WriteLine();
+                ChessPosition p1 = new ChessPosition(1, 'a');
+                Console.WriteLine(p1);
+                Console.WriteLine(p1.ToPosition());
             }
             catch (BoardException e)
             {
