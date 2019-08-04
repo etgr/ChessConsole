@@ -1,6 +1,7 @@
 ﻿using System;
 using ChessConsole.BoardLayer;
 using ChessConsole.BoardLayer.Enums;
+using ChessConsole.ChessGameLayer;
 
 namespace ChessConsole
 {
@@ -8,16 +9,13 @@ namespace ChessConsole
     {
         static void Main(string[] args)
         {
-            Position p1 = new Position(2, 3);
-            Board b1 = new Board(8, 8);
-            Piece pc1 = new Piece(p1, Enum.Parse<Color>("Black"), b1);
-            b1.AddPiece(pc1, p1);
-            Console.WriteLine(p1);
-            Console.WriteLine(pc1.Color);
-            Console.WriteLine(pc1.Position);
-            Console.ReadLine();
-            Console.Clear();
-            ScreenOperation.PrintBoard(b1);
+            Board b = new Board(8, 8);
+
+            b.AddPiece(new Tower(Color.White, b), new Position(0, 0));
+            b.AddPiece(new Tower(Color.White, b), new Position(5, 7));
+            b.AddPiece(new King(Color.Black, b), new Position(1, 2));
+
+            ScreenOperation.PrintBoard(b);
         }
     }
 }

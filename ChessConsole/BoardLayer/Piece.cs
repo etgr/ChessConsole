@@ -11,19 +11,12 @@ namespace ChessConsole.BoardLayer
 
         public Piece()
         {
-            MovementCounter = 0;
         }
 
-        public Piece(Position position, Color color, Board board) : this()
+        public Piece(Color color, Board board)
         {
-            Position = position;
             Color = color;
             Board = board;
-        }
-
-        public override string ToString()
-        {
-            return "T";
         }
     }
 }
